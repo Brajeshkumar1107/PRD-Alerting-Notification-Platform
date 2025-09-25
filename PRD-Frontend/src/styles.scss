@@ -1,0 +1,129 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Theme variables */
+:root {
+  --bg: #0b1221;
+  --surface: #131b2e;
+  --muted-surface: #1a2540;
+  --primary: #4f46e5;
+  --primary-600: #4338ca;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --border: #223052;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 70% -10%, #1f2a44, #0b1221 60%);
+  color: var(--text);
+}
+
+/* Layout helpers */
+.container { max-width: 1040px; margin: 0 auto; padding: 16px; }
+.section { padding: 16px; }
+.card {
+  background: linear-gradient(180deg, var(--surface), #0f1628);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: all .2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+}
+.button:hover { 
+  background: var(--primary-600); 
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+}
+.button:active { transform: translateY(0); }
+.button:disabled { 
+  opacity: 0.5; 
+  cursor: not-allowed; 
+  transform: none !important;
+  box-shadow: none !important;
+}
+.button.ghost { 
+  background: transparent; 
+  border-color: var(--border); 
+  color: var(--text); 
+}
+.button.ghost:hover { 
+  background: var(--muted-surface); 
+  border-color: var(--primary);
+}
+.button.danger { background: var(--danger); }
+.button.danger:hover { background: #dc2626; }
+.button.success { background: var(--success); color: #0b1221; }
+.button.success:hover { background: #16a34a; }
+
+/* Forms */
+label { font-size: 12px; color: var(--text-muted); }
+input, select, textarea {
+  width: 100%;
+  background: var(--muted-surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,.25); }
+
+/* Nav */
+.navbar {
+  position: sticky; top: 0; z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: rgba(19, 27, 46, 0.8);
+  backdrop-filter: blur(8px);
+}
+.navbar .inner { display: flex; align-items: center; gap: 12px; }
+.navbar a { color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+.navbar a.active, .navbar a:hover { background: var(--muted-surface); }
+
+/* Brand */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee, #34d399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #a78bfa, #4f46e5 60%);
+  box-shadow: 0 0 8px rgba(79,70,229,.6);
+}
+
+/* Lists */
+.list { display: grid; gap: 12px; }
+.item { border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: var(--surface); }
+.item .title { font-weight: 600; }
+.item .meta { color: var(--text-muted); font-size: 12px; display: flex; gap: 12px; }
+.item .actions { display: flex; gap: 8px; margin-top: 8px; }

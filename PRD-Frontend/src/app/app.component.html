@@ -1,0 +1,13 @@
+
+<nav class="navbar">
+  <div class="container inner">
+    <div class="brand"><span class="dot"></span> PRD</div>
+    <a routerLink="/alerts" routerLinkActive="active" ariaCurrentWhenActive="page">Alerts</a>
+    <a routerLink="/admin/alerts/new" routerLinkActive="active" ariaCurrentWhenActive="page">Create Alert</a>
+    <a routerLink="/analytics" routerLinkActive="active" ariaCurrentWhenActive="page">Analytics</a>
+    <span style="margin-left:auto;"><button class="button ghost" (click)="logout()">Logout</button></span>
+  </div>
+</nav>
+<div class="container section">
+  <router-outlet />
+</div>
